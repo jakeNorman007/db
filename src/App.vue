@@ -1,13 +1,11 @@
 <template>
-    <div id="nav">
-        <router-link to="/">Home</router-link>
-        <router-link to="/About">About</router-link>
-    </div>
     <router-view/>
 </template>
 
 <script>
-</script>
+    import { RouterLink } from "vue-router";
 
-<style>
-</style>
+    export default {
+        name: 'App',
+    }
+</script>

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import About from "../views/About.vue";
+import Dashboard from "../views/Dashboard.vue";
 
 const routes = [
   {
@@ -9,13 +9,15 @@ const routes = [
     component: Home,
   },
   {
-      path: "/About",
-      name: "About",
-      component: About,
-]
+    path: "/dashboard",
+    name: "dashboard",
+    component: Dashboard,
+  }
+];
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL), routes
-})
+  history: createWebHistory(),
+  routes
+});
 
 export default router;
