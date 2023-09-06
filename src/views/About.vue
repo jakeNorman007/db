@@ -1,9 +1,9 @@
 <template>
-  <h1>Login page.</h1>
+  <div>This is the about page.</div>
 </template>
 
 <script>
 export default {
-  name: "login",
+  name: "about",
 };
 </script>

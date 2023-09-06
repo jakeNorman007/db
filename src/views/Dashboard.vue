@@ -1,17 +1,17 @@
 <template>
-    <Navbar />
-    <div class="bg-green-400 h-screen">
-    <h1>Dashboard page</h1>
-    </div>
+    <main class="flex justify-between">
+        <p class="text-white text-4xl font-bold">Your Boards</p>
+        <UserAvatar />
+    </main>
 </template>
 
 <script>
-import Navbar from "../components/Navbar.vue";
+    import UserAvatar from "../components/UserAvatar.vue";
 
-export default {
-  name: "dashboard",
-  components: {
-      Navbar,
-  }
-};
+    export default {
+       name: "Dashboard",
+       components: {
+           UserAvatar,
+        }
+    }
 </script>
