@@ -1,8 +1,8 @@
 <template>
-  <div class="grid grid-cols-[7rem_1fr]">
+  <div class="grid grid-cols-[8rem_1fr]">
     <Navbar />
     <main class="bg-green-400 pt-9 px-[4.8rem]">
-            <router-view />
+      <router-view />
     </main>
   </div>
 </template>
