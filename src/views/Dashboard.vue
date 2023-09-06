@@ -1,9 +1,17 @@
 <template>
-    <h1>I am the dashboard page</h1>
+    <Navbar />
+    <div class="bg-green-400 h-screen">
+    <h1>Dashboard page</h1>
+    </div>
 </template>
 
 <script>
-    export default{
-        name: 'dashboard',
-    }
+import Navbar from "../components/Navbar.vue";
+
+export default {
+  name: "dashboard",
+  components: {
+      Navbar,
+  }
+};
 </script>
