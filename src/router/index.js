@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import About from "../views/About.vue";
-import AppLayout from "../components/AppLayout.vue";
+import AppLayout from "../components/UiComponents/AppLayout.vue";
 
 const routes = [
   {
@@ -14,7 +14,7 @@ const routes = [
     path: "/dashboard",
     name: "dashboard",
     meta: { layout: AppLayout },
-    component: () => import("../views/Dashboard.vue"),
+    component: () => import("../views/DashboardViews/Dashboard.vue"),
   },
   {
     path: "/login",
@@ -25,6 +25,12 @@ const routes = [
     path: "/about",
     name: "about",
     component: About,
+  },
+  {
+    path: "/board/:boardId",
+    name: "board",
+    meta: { layout: AppLayout },
+    component: () => import("../views/BoardViews/Board.vue"), 
   }
 ];
 

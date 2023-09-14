@@ -6,10 +6,16 @@
   </main>
 </template>
 
-<script>
+<script setup>
 import { RouterLink } from "vue-router";
+import { QueryClient } from "@tanstack/vue-query";
 
-export default {
-  name: "App",
-};
+// sets up the cache behind the scenes
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+    },
+  },
+});
 </script>

@@ -2,5 +2,5 @@
 </script>
 
 <template>
-    This is the about page
+    SUCK IT
 </template>

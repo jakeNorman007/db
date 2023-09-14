@@ -7,13 +7,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Navbar from "./Navbar.vue";
 
-export default {
-  name: "AppLayout",
-  components: {
-    Navbar,
-  },
-};
 </script>

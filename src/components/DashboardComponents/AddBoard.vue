@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-cols-5 gap-4 mt-6">
-    <button class="flex flex-col items-center bg-slate-100 p-[5rem] shadow-md shadow-slate-500
-        rounded-lg text-lg text-slate-900 hover:bg-slate-200">
+    <div>
+    <button class="flex items-center bg-slate-100 p-[5rem] shadow-md shadow-slate-500
+        rounded-lg text-lg text-slate-900 opacity-75 hover:bg-slate-200">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -18,11 +18,8 @@
       </svg>
       Create new board
     </button>
-  </div>
+    </div>
 </template>
 
-<script>
-export default {
-  name: "AddBoard",
-};
+<script setup>
 </script>

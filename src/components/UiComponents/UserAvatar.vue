@@ -8,15 +8,12 @@
     </div>
     <div
       class="flex h-[4rem] w-[12rem] bg-slate-600 rounded-md text-white items-center justify-center font-semibold
-        border-t border-slate-400"
+        shadow-inner shadow-slate-400"
     >
       User's name here
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "UserAvatar",
-};
+<script setup>
 </script>

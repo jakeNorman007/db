@@ -1,3 +1,6 @@
+<script setup>
+</script>
+
 <template>
   <div class="relative max-h-screen">
     <div
@@ -23,19 +26,19 @@
       </div>
       <div class="flex gap-5">
         <button
-          class="flex font-semibold items-center text-white gap-2 bg-green-400 px-3 py-2 rounded-3xl hover:bg-green-500"
+          class="flex font-semibold items-center shadow-inner shadow-green-600 text-white gap-2 bg-green-400 px-3 py-2 rounded-3xl hover:bg-green-500"
           @click="$router.push('/login')"
         >
          Login 
         </button>
         <button
-          class="flex font-semibold items-center text-white gap-2 bg-green-400 px-3 py-2 rounded-3xl hover:bg-green-500"
+          class="flex font-semibold items-center shadow-inner shadow-green-600 text-white gap-2 bg-green-400 px-3 py-2 rounded-3xl hover:bg-green-500"
           @click="$router.push('/about')"
         >
           About
         </button>
         <button
-          class="flex font-semibold items-center text-white gap-2 bg-green-400 px-3 py-2 rounded-3xl hover:bg-green-500"
+          class="flex font-semibold items-center shadow-inner shadow-green-600 text-white gap-2 bg-green-400 px-3 py-2 rounded-3xl hover:bg-green-500"
         >
           <i class="devicon-github-original text-2xl"></i>
           <a href="https://github.com/jakeNorman007/deskbink">Github</a>
@@ -56,12 +59,9 @@
       </p>
       <button
         class="mt-4 justify-self-start bg-green-400 px-3 py-3 rounded-md text-white font-semibold hover:bg-green-500"
-        @click="$router.push('/dashboard')"
-      >
+        @click="$router.push('/dashboard')">
       Go to demo
       </button>
     </div>
   </div>
 </template>
-
-<script></script>
