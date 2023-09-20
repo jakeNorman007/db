@@ -3,9 +3,7 @@ import { ref } from "vue";
 import { useBoards } from "./useBoards";
 import { useDeleteBoard } from "./useDeleteBoard";
 import supabase from "../../services/supabase.js";
-//import { useCreateBoard } from "./useCreateBoard";
 
-//const { createBoard, isCreating } = useCreateBoard();
 const { boards, isLoading } = useBoards();
 const { isDeleting, deleteBoard } = useDeleteBoard();
 const isShowing = ref(true);
@@ -17,7 +15,6 @@ function toggleCreateBoard() {
   return { isShowing, toggleCreateBoard };
 }
 
-//idk man, I couldn't get the hook to. so fuck it, I guess. This way works.
 const createBoard = async () => {
   const { error } = await supabase
     .from("boards")
@@ -32,12 +29,12 @@ const createBoard = async () => {
 </script>
 
 <template>
-  <div class="flex justify-between mb-12 text-white">
+  <div class="flex justify-between mb-12 text-slate-900">
     <p class="text-3xl font-semibold">Your Boards</p>
     <button
       v-if="isShowing"
       @click="toggleCreateBoard"
-      class="bg-slate-600 rounded-md px-[9rem] py-3 shadow-inner shadow-slate-400 hover:bg-slate-700 hover:text-green-500"
+      class="text-white bg-slate-600 rounded-md px-[9rem] py-3 shadow-inner shadow-slate-400 hover:bg-slate-700 hover:text-green-500"
     >
       + Create Board
     </button>
@@ -74,12 +71,13 @@ const createBoard = async () => {
   </div>
   <div class="grid grid-cols-5 gap-5">
     <div
+      @click="$router.replace(`/board/${board.id}`)"
       v-for="(board, index) in boards"
       :key="index"
-      class="flex bg-slate-300 h-[10rem] rounded-md text-2xl text-slate-900 font-semibold p-[2rem] cursor-pointer"
+      class="flex justify-between bg-slate-200 hover:bg-slate-300 h-[10rem] rounded-md text-2xl text-slate-900 font-semibold p-[2rem] cursor-pointer"
     >
       {{ board.boardName }}
-      <button @click="deleteBoard(board.id)" :disabled="isDeleting">
+      <button @click="deleteBoard(board.id)" :disabled="isDeleting" class="text-lg">
         Delete
       </button>
     </div>
