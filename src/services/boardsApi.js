@@ -43,3 +43,19 @@ export async function createDemoBoard(boardName) {
 
   return data;
 }
+
+//edits a board's name
+export async function editBoard(boardName, id){
+    const { data, error } = await supabase
+        .from("boards")
+        .update({ boardName: boardName })
+        .eq("id", id)
+        .select();
+
+    if (error) {
+        console.log(error);
+        throw new Error("Board could not be updated");
+    }
+
+    return data;
+}

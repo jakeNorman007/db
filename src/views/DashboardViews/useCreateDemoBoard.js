@@ -1,4 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/vue-query";
+import { useMutation, useQueryClient } from "@tanstack/vue-query";
 import { createDemoBoard as createDemoApi } from "../../services/boardsApi";
 
 export function useCreateDemoBoard() {

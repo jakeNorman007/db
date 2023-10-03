@@ -5,7 +5,7 @@ import { useCreateDemoBoard } from "../DashboardViews/useCreateDemoBoard";
 
 const { isCreating, createDemoBoard } = useCreateDemoBoard();
 const { isLoading, demoBoards } = useDemoBoards();
-const demoBoardName = ref("");
+const boardName = ref("");
 </script>
 
 <template>
@@ -15,12 +15,12 @@ const demoBoardName = ref("");
       <div class="flex items-center gap-4">
           <p>Create a board</p>
       <form
-        @submit="createDemoBoard(demoBoardName)"
+        @submit="createDemoBoard(boardName)"
         class="flex gap-3 bg-zinc-200 px-10 py-2 rounded-md"
       >
         <input
           type="text"
-          v-model="demoBoardName"
+          v-model="boardName"
           required
           :maxlength="20"
           class="w-[14rem] h-[2rem] rounded-md"
