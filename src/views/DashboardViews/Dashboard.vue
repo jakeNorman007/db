@@ -27,7 +27,6 @@ const boardName = ref("");
         />
         <button
           type="submit"
-          @submit="toggleCreateBoard"
           :disabled="isCreating"
         >
         +

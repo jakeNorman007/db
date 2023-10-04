@@ -45,10 +45,10 @@ export async function createDemoBoard(boardName) {
 }
 
 //edits a board's name
-export async function editBoard(boardName, id){
+export async function editBoard(id, boardName){
     const { data, error } = await supabase
         .from("boards")
-        .update({ boardName: boardName })
+        .update([{ boardName: boardName }])
         .eq("id", id)
         .select();
 
