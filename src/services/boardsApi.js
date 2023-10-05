@@ -1,6 +1,5 @@
 import supabase from "./supabase";
 
-//this gets all the boards not tied to a user, boards for demo version
 export async function getDemoBoards() {
   const { data, error } = await supabase.from("boards").select("*");
 
@@ -12,8 +11,6 @@ export async function getDemoBoards() {
   return data;
 }
 
-//gets a a single board, specifically the one attached to the ID and its route.
-//if you click on the board in dashboard, it'll take you to that board's page
 export async function getBoard(id) {
   const { data, error } = await supabase
     .from("boards")
@@ -29,7 +26,6 @@ export async function getBoard(id) {
   return data;
 }
 
-//creating a board as a demo user
 export async function createDemoBoard(boardName) {
   const { data, error } = await supabase
     .from("boards")
@@ -44,17 +40,15 @@ export async function createDemoBoard(boardName) {
   return data;
 }
 
-//edits a board's name
-export async function editBoard(id, boardName){
+export async function deleteBoard(id){
     const { data, error } = await supabase
         .from("boards")
-        .update([{ boardName: boardName }])
+        .delete()
         .eq("id", id)
-        .select();
 
-    if (error) {
+    if(error) {
         console.log(error);
-        throw new Error("Board could not be updated");
+        throw new Error("Your board could not be deleted");
     }
 
     return data;
