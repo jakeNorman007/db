@@ -2,6 +2,7 @@
 import { useDemoBoards } from "./useDemoBoards";
 import { useDeleteBoard } from "./useDeleteBoard";
 import CreateBoardModal from "../../components/CreateBoardModal.vue";
+import DeleteIcon from "../../icons/DeleteIcon.vue";
 
 const { isDeleting, deleteBoard } = useDeleteBoard();
 const { isLoading, demoBoards } = useDemoBoards();
@@ -10,7 +11,9 @@ const { isLoading, demoBoards } = useDemoBoards();
 <template>
   <div class="pt-8 px-[8rem]">
     <div class="flex gap-4 justify-between items-center">
-      <p class="text-3xl font-semibold">Your Boards (#)</p>
+      <p class="text-3xl font-semibold">
+        Your Boards ({{ demoBoards?.length }})
+      </p>
       <CreateBoardModal />
     </div>
   </div>
@@ -24,17 +27,13 @@ const { isLoading, demoBoards } = useDemoBoards();
       <div class="flex flex-col">
         <button
           @click="$router.replace(`/board/${demoBoard.id}`)"
-          class="flex p-4 text-black text-xl font-semibold"
+          class="flex flex-col p-4 text-black text-xl font-semibold"
         >
           {{ demoBoard.boardName }}
         </button>
         <div class="flex justify-end mx-3">
-          <button
-            @click="deleteBoard(demoBoard.id)"
-            :disabled="isDeleting"
-            class="w-[1.5rem] rounded-full bg-green-200 hover:bg-green-300"
-          >
-            D
+          <button @click="deleteBoard(demoBoard.id)" :disabled="isDeleting">
+            <DeleteIcon />
           </button>
         </div>
       </div>

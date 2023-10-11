@@ -9,13 +9,13 @@
         <p class="text-3xl font-bold items-center">deskbink \\\</p>
       <div class="flex gap-5">
         <button
-          class="flex font-semibold items-center shadow-inner gap-2 bg-green-300 px-3 py-2 rounded-md hover:bg-green-200"
+          class="flex font-semibold items-center shadow-inner gap-2 bg-green-300 px-3 py-2 rounded-full hover:bg-green-200"
           @click="$router.push('/about')"
         >
           Learn more
         </button>
         <button
-          class="flex font-semibold items-center shadow-inner gap-2 bg-green-300 px-3 py-2 rounded-md hover:bg-green-200"
+          class="flex font-semibold items-center shadow-inner gap-2 bg-green-300 px-3 py-2 rounded-full hover:bg-green-200"
         >
           <i class="devicon-github-original text-2xl"></i>
           <a href="https://github.com/jakeNorman007/deskbink">Github</a>
@@ -35,7 +35,7 @@
         the way your team works and accomplishes it's goals.
       </p>
       <button
-        class="mt-4 justify-self-start bg-green-300 px-3 py-3 rounded-md text-black font-semibold hover:bg-green-200"
+        class="mt-4 justify-self-start bg-green-300 px-3 py-3 rounded-full text-black font-semibold hover:bg-green-200"
         @click="$router.push('/dashboard')">
       Go to demo
       </button>

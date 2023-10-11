@@ -26,10 +26,12 @@ export async function getBoard(id) {
   return data;
 }
 
-export async function createDemoBoard(boardName) {
+export async function createDemoBoard(boardName, description) {
   const { data, error } = await supabase
     .from("boards")
-    .insert([{ boardName: boardName }])
+    .insert([{ boardName: boardName,
+               description: description
+    }])
     .select();
 
   if (error) {

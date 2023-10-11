@@ -1,6 +1,7 @@
 <script setup>
 import { Teleport, ref } from "vue";
 import { useCreateDemoBoard } from "../views/DashboardViews/useCreateDemoBoard";
+import AddBoardIcon from "../icons/AddBaordIcon.vue";
 
 const { isCreating, createDemoBoard } = useCreateDemoBoard();
 const modalOpen = ref(false);
@@ -10,9 +11,11 @@ const boardName = ref("");
 <template>
   <button
     @click="modalOpen = true"
-    class="bg-green-200 px-3 py-3 rounded-md hover:bg-green-300"
+    class="font-semibold bg-green-200 px-4 py-3 rounded-full hover:bg-green-300"
   >
-    + New board
+  <div class="flex gap-2">
+  <AddBoardIcon />New board
+  </div>
   </button>
   <div
     v-if="modalOpen"
@@ -33,25 +36,17 @@ const boardName = ref("");
             >
             <input
               type="text"
+              required
+              maxlength="20"
               v-model="boardName"
               placeholder="e.g. project name..."
-              class="flex px-3 rounded-md ml-6 py-2 w-[27rem] border border-slate-300 hover:border-green-300"
-            />
-          </div>
-          <div class="mb-3">
-            <label class="text-sm text-slate-500 font-semibold px-6"
-              >Description</label
-            >
-            <input
-              type="text"
-              placeholder="e.g. creating backend for app..."
               class="flex px-3 rounded-md ml-6 py-2 w-[27rem] border border-slate-300 hover:border-green-300"
             />
           </div>
           <button
             type="submit"
             :disabled="isCreating"
-            class="bg-green-200 hover:bg-green-300 ml-6 w-[27rem] rounded-md mt-2 py-2"
+            class="bg-green-200 hover:bg-green-300 ml-6 w-[27rem] rounded-full mt-2 py-2"
           >
            Create board 
           </button>
