@@ -5,7 +5,7 @@ export async function getDemoBoards() {
 
   if (error) {
     console.log(error);
-    throw new Error("Boards could not be gathered.");
+    throw new Error("Boards could not be gathered");
   }
 
   return data;
@@ -26,12 +26,10 @@ export async function getBoard(id) {
   return data;
 }
 
-export async function createDemoBoard(boardName, description) {
+export async function createDemoBoard({boardName, description}) {
   const { data, error } = await supabase
     .from("boards")
-    .insert([{ boardName: boardName,
-               description: description
-    }])
+    .insert([{ boardName: boardName, description: description }])
     .select();
 
   if (error) {
@@ -42,16 +40,13 @@ export async function createDemoBoard(boardName, description) {
   return data;
 }
 
-export async function deleteBoard(id){
-    const { data, error } = await supabase
-        .from("boards")
-        .delete()
-        .eq("id", id)
+export async function deleteBoard(id) {
+  const { data, error } = await supabase.from("boards").delete().eq("id", id);
 
-    if(error) {
-        console.log(error);
-        throw new Error("Your board could not be deleted");
-    }
+  if (error) {
+    console.log(error);
+    throw new Error("Board could not be deleted");
+  }
 
-    return data;
+  return data;
 }

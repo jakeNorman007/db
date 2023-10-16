@@ -12,6 +12,7 @@
     "@supabase/supabase-js": "^2.33.1",
     "@tanstack/vue-query": "^4.35.3",
     "pinia": "^2.1.6",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },

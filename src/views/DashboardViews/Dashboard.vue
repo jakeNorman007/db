@@ -22,7 +22,7 @@ const { isLoading, demoBoards } = useDemoBoards();
     <div
       v-for="(demoBoard, index) in demoBoards"
       :key="index"
-      class="grid bg-slate-50 h-[6rem] rounded-md shadow-md shadow-slate-300"
+      class="grid bg-slate-50 h-[6rem] rounded-md shadow-md shadow-slate-300 border-t-2 border-slate-200"
     >
       <div class="flex flex-col">
         <button

@@ -6,6 +6,8 @@ import AddBoardIcon from "../icons/AddBaordIcon.vue";
 const { isCreating, createDemoBoard } = useCreateDemoBoard();
 const modalOpen = ref(false);
 const boardName = ref("");
+const description = ref("");
+
 </script>
 
 <template>
@@ -26,10 +28,10 @@ const boardName = ref("");
       <div
         v-if="modalOpen"
         @click.stop=""
-        class="flex flex-col bg-slate-50 rounded-md fixed z-[999] w-[30rem] h-[20rem] ml-[-150px] left-[45%] top-[15%]"
+        class="flex flex-col bg-slate-50 rounded-md fixed z-[999] w-[30rem] h-[33rem] ml-[-150px] left-[45%] top-[15%]"
       >
-        <p class="px-6 py-[1rem] font-semibold text-xl">Create new board</p>
-        <form @submit="createDemoBoard(boardName)">
+        <p class="px-6 py-3 font-semibold text-xl">Create new board</p>
+        <form @submit="createDemoBoard({boardName, description})">
           <div class="my-3">
             <label class="text-sm text-slate-500 font-semibold px-6"
               >Board name</label
@@ -40,7 +42,18 @@ const boardName = ref("");
               maxlength="20"
               v-model="boardName"
               placeholder="e.g. project name..."
-              class="flex px-3 rounded-md ml-6 py-2 w-[27rem] border border-slate-300 hover:border-green-300"
+              class="flex px-4 rounded-md ml-6 py-2 w-[27rem] border border-slate-300 hover:border-green-300"
+            />
+            <label class="text-sm text-slate-500 font-semibold px-6"
+              >Description</label
+            >
+            <textarea
+              type="text"
+              required
+              maxlength="250"
+              v-model="description"
+              placeholder="e.g. project description..."
+              class="flex resize-none px-4 rounded-md ml-6 py-2 w-[27rem] h-[15rem] border border-slate-300 hover:border-green-300"
             />
           </div>
           <button
@@ -50,6 +63,9 @@ const boardName = ref("");
           >
            Create board 
           </button>
+        <button @click="modalOpen = false"
+            class="bg-green-200 hover:bg-green-300 ml-6 w-[27rem] rounded-full mt-2 py-2"
+            >Close</button>
         </form>
       </div>
     </Teleport>
