@@ -16,7 +16,7 @@ const description = ref("");
     class="font-semibold bg-green-200 px-4 py-3 rounded-full hover:bg-green-300"
   >
   <div class="flex gap-2">
-  <AddBoardIcon />New board
+  <AddBoardIcon />Start new project 
   </div>
   </button>
   <div

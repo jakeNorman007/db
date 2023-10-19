@@ -14,3 +14,16 @@ export async function getCards(id) {
 
   return data;
 }
+
+export async function getAllCards(){
+    const { data, error } = await supabase
+        .from("cards")
+        .select("list_id");
+
+    if(error) {
+        console.log(error);
+        throw new Error("nope");
+    }
+
+    return data;
+}

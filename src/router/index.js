@@ -24,6 +24,12 @@ const routes = [
     meta: { layout: AppLayout },
     component: () => import("../views/BoardViews/Board.vue"),
   },
+  {
+      path: "/lists/:listId",
+    name: "lists",
+    meta: { layout: AppLayout },
+    component: () => import("../views/ListViews/Lists.vue"),
+  },
 ];
 
 const router = createRouter({
