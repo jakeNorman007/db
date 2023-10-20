@@ -16,19 +16,19 @@ const routes = [
     path: "/dashboard",
     name: "dashboard",
     meta: { layout: AppLayout },
-    component: () => import("../views/DashboardViews/Dashboard.vue"),
+    component: () => import("../views/Dashboard.vue"),
   },
   {
     path: "/board/:boardId",
     name: "board",
     meta: { layout: AppLayout },
-    component: () => import("../views/BoardViews/Board.vue"),
+    component: () => import("../views/Board.vue"),
   },
   {
       path: "/lists/:listId",
     name: "lists",
     meta: { layout: AppLayout },
-    component: () => import("../views/ListViews/Lists.vue"),
+    component: () => import("../views/List.vue"),
   },
 ];
 

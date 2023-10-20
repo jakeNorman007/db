@@ -1,6 +1,6 @@
 import supabase from "./supabase";
 
-//grabs the cards related to the current list
+//retrieves all of the cards based on the lists id the card is related to 
 export async function getCards(id) {
   const { data, error } = await supabase
     .from("cards")
@@ -15,15 +15,3 @@ export async function getCards(id) {
   return data;
 }
 
-export async function getAllCards(){
-    const { data, error } = await supabase
-        .from("cards")
-        .select("list_id");
-
-    if(error) {
-        console.log(error);
-        throw new Error("nope");
-    }
-
-    return data;
-}

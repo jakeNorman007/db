@@ -1,9 +1,9 @@
 <script setup>
 import { Teleport, ref } from "vue";
-import { useCreateDemoBoard } from "../views/DashboardViews/useCreateDemoBoard";
+import { useCreateBoard } from "../views/BoardQueries/useCreateBoard";
 import AddBoardIcon from "../icons/AddBaordIcon.vue";
 
-const { isCreating, createDemoBoard } = useCreateDemoBoard();
+const { isCreating, createBoard } = useCreateBoard();
 const modalOpen = ref(false);
 const boardName = ref("");
 const description = ref("");
@@ -31,7 +31,7 @@ const description = ref("");
         class="flex flex-col bg-slate-50 rounded-md fixed z-[999] w-[30rem] h-[33rem] ml-[-150px] left-[45%] top-[15%]"
       >
         <p class="px-6 py-3 font-semibold text-xl">Create new board</p>
-        <form @submit="createDemoBoard({boardName, description})">
+        <form @submit="createBoard({boardName, description})">
           <div class="my-3">
             <label class="text-sm text-slate-500 font-semibold px-6"
               >Board name</label

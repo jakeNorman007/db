@@ -1,6 +1,6 @@
 import supabase from "./supabase";
 
-//gets all lists
+//retrieves all of the lists from db
 export async function allLists(){
     const { data, error } = await supabase
         .from("lists")
@@ -8,18 +8,34 @@ export async function allLists(){
 
     if(error) {
         console.log(error);
-        throw new Error("All lists could not be gathered");
+        throw new Error("Lists could not be gathered");
     }
 
     return data;
 }
 
-//grabs the lists related to the current board
+//retrieves the lists related to the current board's id
 export async function getLists(id) {
   const { data, error } = await supabase
     .from("lists")
     .select()
     .eq("board_id", id);
+
+  if (error) {
+    console.log(error);
+    throw new Error("List could not be gathered");
+  }
+
+  return data;
+}
+
+//retrieves a single list from db based on the list's id
+export async function getList(id) {
+  const { data, error } = await supabase
+    .from("lists")
+    .select("*")
+    .eq("id", id)
+    .single();
 
   if (error) {
     console.log(error);

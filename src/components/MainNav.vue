@@ -3,6 +3,7 @@ import HomeIcon from "../icons/HomeIcon.vue";
 import SettingsIcon from "../icons/SettingsIcon.vue";
 import AboutIcon from "../icons/AboutIcon.vue";
 import DashboardIcon from "../icons/DashboardIcon.vue";
+import TeamIcon from "../icons/TeamIcon.vue";
 </script>
 
 <template>
@@ -38,6 +39,15 @@ import DashboardIcon from "../icons/DashboardIcon.vue";
         <div class="flex gap-2">
         <AboutIcon />
           About
+        </div>
+        </li>
+        <li
+          class="mb-2 focus:bg-green-300 hover:bg-green-300 hover:ease-in-out duration-200 cursor-pointer font-semibold px-6 py-[1rem] w-[13rem] py-[1rem] bg-green-200 rounded-r-3xl
+            hover:w-[15rem]"
+        >
+        <div class="flex gap-2">
+        <TeamIcon />
+          Team
         </div>
         </li>
         <li

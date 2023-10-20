@@ -1,9 +1,9 @@
 <script setup>
-import ListHeaderIcon from "../../icons/ListHeaderIcon.vue";
-import CreateListModal from "../../components/CreateListModal.vue";
-import BoardDescriptionModal from "../../components/BoardDescriptionModal.vue";
-import { useBoard } from "./useGetBoard";
-import { useLists } from "./useLists";
+import ListHeaderIcon from "../icons/ListHeaderIcon.vue";
+import CreateListModal from "../components/CreateListModal.vue";
+import BoardDescriptionModal from "../components/BoardDescriptionModal.vue";
+import { useBoard } from "./BoardQueries/useGetBoard";
+import { useLists } from "./ListQueries/useLists";
 
 const { lists } = useLists();
 const { isLoading, board } = useBoard();

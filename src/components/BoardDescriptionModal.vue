@@ -1,7 +1,7 @@
 <script setup>
 import { Teleport, ref } from "vue";
 import DescriptionIcon from "../icons/DescriptionIcon.vue";
-import { useBoard } from "../views/BoardViews/useGetBoard";
+import { useBoard } from "../views/BoardQueries/useGetBoard";
 
 const { board } = useBoard();
 const modalOpen = ref(false);

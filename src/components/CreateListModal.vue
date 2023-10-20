@@ -1,6 +1,6 @@
 <script setup>
 import { Teleport, ref } from "vue";
-import { useCreateList } from "../views/BoardViews/useCreateList";
+import { useCreateList } from "../views/ListQueries/useCreateList";
 import AddBoardIcon from "../icons/AddBaordIcon.vue";
 import { useRoute } from "vue-router";
 
