@@ -25,11 +25,12 @@ const { isLoading, board } = useBoard();
       :key="index"
       class="bg-slate-50 rounded-md shadow-md h-[20rem] mx-6 shadow-slate-300 border-t-2 border-slate-200"
     >
+    <div class="flex gap-3 p-4">
       <div><ListHeaderIcon /></div>
       <button @click="$router.replace(`/lists/${list.id}`)">
-        {{ list.listName }}
-        -> people on team, timestamps, edit, descriptions( short & long), due date, team name, delete
+        Task: {{ list.listName }}
       </button>
+    </div>
     </div>
   </div>
 </template>
