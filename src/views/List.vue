@@ -1,4 +1,5 @@
 <script setup>
+import CreateCardModal from "../components/CreateCardModal.vue";
 import { useCards } from "./CardQueries/useCards";
 import { useGetList } from "../views/ListQueries/useGetList";
 import { format } from "date-fns";
@@ -13,7 +14,7 @@ const { cards } = useCards();
       class="flex flex-col ml-[1rem] font-semibold text-lg w-[50rem] h-[57rem]"
     >
       <div class="text-3xl font-semibold mx-3 my-4">
-        {{ list?.listName }} ({{ cards?.length }})
+          {{ list?.listName }} ({{ cards?.length }})<CreateCardModal />
       </div>
       <div class="overflow-y-scroll scrollbar-hide">
         <div

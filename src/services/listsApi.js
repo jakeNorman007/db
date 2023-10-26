@@ -46,15 +46,27 @@ export async function getList(id) {
 }
 
 //creates a new list
-export async function createList({listName, board_id}) {
+export async function createList({listName, board_id, teamName}) {
   const { data, error } = await supabase
     .from("lists")
-    .insert([{ listName: listName, board_id }])
+    .insert([{ listName: listName, board_id, teamName: teamName }])
     .select();
 
   if (error) {
     console.log(error);
     throw new Error("List could not be created");
+  }
+
+  return data;
+}
+
+//ability to delete a list related to a project 
+export async function deleteList(id) {
+  const { data, error } = await supabase.from("lists").delete().eq("id", id);
+
+  if (error) {
+    console.log(error);
+    throw new Error("List could not be deleted");
   }
 
   return data;

@@ -15,3 +15,17 @@ export async function getCards(id) {
   return data;
 }
 
+//creates a new card
+export async function createCard({cardName, list_id}) {
+  const { data, error } = await supabase
+    .from("cards")
+    .insert([{ cardName: cardName, list_id }])
+    .select();
+
+  if (error) {
+    console.log(error);
+    throw new Error("Card could not be created");
+  }
+
+  return data;
+}

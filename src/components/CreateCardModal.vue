@@ -1,15 +1,14 @@
 <script setup>
 import AddBoardIcon from "../icons/AddBaordIcon.vue";
 import { Teleport, ref } from "vue";
-import { useCreateList } from "../views/ListQueries/useCreateList";
+import { useCreateCard } from "../views/CardQueries/useCreateCard";
 import { useRoute } from "vue-router";
 
-const { isCreating, createList } = useCreateList();
+const { isCreating, createCard } = useCreateCard();
 const modalOpen = ref(false);
-const listName = ref("");
-const teamName = ref("");
+const cardName = ref("");
 const route = useRoute();
-const board_id = route.params.boardId;
+const list_id = route.params.listId;
 </script>
 
 <template>
@@ -17,7 +16,7 @@ const board_id = route.params.boardId;
     @click="modalOpen = true"
     class="font-semibold ml-[3rem] text-lg bg-green-200 px-4 py-3 rounded-full hover:bg-green-300"
   >
-    <div class="flex gap-2"><AddBoardIcon />New list</div>
+    <div class="flex gap-2"><AddBoardIcon />New card</div>
   </button>
   <div
     v-if="modalOpen"
@@ -28,31 +27,20 @@ const board_id = route.params.boardId;
       <div
         v-if="modalOpen"
         @click.stop=""
-        class="flex flex-col bg-slate-50 rounded-md fixed z-[999] w-[30rem] h-[18rem] ml-[-150px] left-[45%] top-[15%]"
+        class="flex flex-col bg-slate-50 rounded-md fixed z-[999] w-[30rem] h-[14rem] ml-[-150px] left-[45%] top-[15%]"
       >
-        <p class="px-6 py-[1rem] font-semibold text-xl">Create new list</p>
-        <form @submit="createList({ listName, board_id: board_id, teamName })">
+        <p class="px-6 py-[1rem] font-semibold text-xl">Create new Card</p>
+        <form @submit="createCard({ cardName, list_id: list_id })">
           <div class="my-3">
             <label class="text-sm text-slate-500 font-semibold px-6"
-              >List name</label
+              >Card name</label
             >
             <input
               type="text"
               required
               maxlength="20"
-              v-model="listName"
+              v-model="cardName"
               placeholder="e.g. list name..."
-              class="flex px-3 rounded-md ml-6 py-2 w-[27rem] border border-slate-300 hover:border-green-300"
-            />
-            <label class="text-sm text-slate-500 font-semibold px-6"
-              >Team name</label
-            >
-            <input
-              type="text"
-              required
-              maxlength="20"
-              v-model="teamName"
-              placeholder="e.g. team name..."
               class="flex px-3 rounded-md ml-6 py-2 w-[27rem] border border-slate-300 hover:border-green-300"
             />
           </div>
@@ -62,7 +50,7 @@ const board_id = route.params.boardId;
             @click="onClick"
             class="bg-green-200 hover:bg-green-300 ml-6 w-[27rem] rounded-full mt-2 py-2"
           >
-            Create List
+            Create card 
           </button>
         </form>
       </div>
