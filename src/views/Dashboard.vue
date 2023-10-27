@@ -3,6 +3,7 @@ import { useBoards } from "./BoardQueries/useBoards";
 import { useDeleteBoard } from "./BoardQueries/useDeleteBoard";
 import CreateBoardModal from "../components/CreateBoardModal.vue";
 import DeleteIcon from "../icons/DeleteIcon.vue";
+import EditIcon from "../icons/EditIcon.vue";
 import { format } from "date-fns";
 
 const { isDeleting, deleteBoard } = useDeleteBoard();
@@ -28,15 +29,21 @@ const { isLoading, boards } = useBoards();
       <div class="flex flex-col">
         <button
           @click="$router.replace(`/board/${board.id}`)"
-          class="flex flex-col p-4 text-black text-xl font-semibold"
+          class="flex m-4 px-5 py-2 font-semibold bg-green-200 rounded-full hover:bg-green-300"
         >
           Project name: {{ board.boardName }}
         </button>
-        <div class="flex mx-3">
+            <div class="px-6 text-md text-slate-400">
+          {{ board.shortDescription }}
+            </div>
+        <div class="flex mx-3 mt-[3rem] px-2 justify-between">
+            <div>Project created: {{ format(new Date(board.created_at), "MMM dd, yyyy") }}</div>
+            <div>
+          <button><EditIcon /></button>
           <button @click="deleteBoard(board.id)" :disabled="isDeleting">
             <DeleteIcon />
           </button>
-          {{ format(new Date(board.created_at), "MMM dd, yyyy") }}
+            </div>
         </div>
       </div>
     </div>

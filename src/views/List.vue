@@ -1,9 +1,12 @@
 <script setup>
 import CreateCardModal from "../components/CreateCardModal.vue";
+import DeleteIcon from "../icons/DeleteIcon.vue";
+import { useDeleteCard } from "../views/CardQueries/useDeleteCard";
 import { useCards } from "./CardQueries/useCards";
 import { useGetList } from "../views/ListQueries/useGetList";
 import { format } from "date-fns";
 
+const { isDeleting, deleteCard } = useDeleteCard();
 const { list } = useGetList();
 const { cards } = useCards();
 </script>
@@ -28,6 +31,9 @@ const { cards } = useCards();
           <div>
           Date created: {{ format(new Date(card.created_at), "MMM dd yyyy") }}
           </div>
+          <button @click="deleteCard(card.id)" :disabled="isDeleting">
+            <DeleteIcon />
+          </button>
         </div>
       </div>
     </div>

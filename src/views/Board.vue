@@ -14,7 +14,7 @@ const { isLoading, board } = useBoard();
 
 <template>
   <div class="py-8 ml-[5rem] text-3xl font-semibold">
-    {{ board?.boardName }} ({{ lists?.length }})
+    Project: {{ board?.boardName }} | project tasks ({{ lists?.length }})
     <CreateListModal /><BoardDescriptionModal />
   </div>
   <div v-if="isLoading">Loading...</div>
@@ -28,11 +28,15 @@ const { isLoading, board } = useBoard();
       :key="index"
       class="bg-slate-50 rounded-md shadow-md h-[20rem] mx-6 shadow-slate-300 border-t-2 border-slate-200"
     >
-      <div class="flex gap-3 p-4">
+      <div
+        class="flex gap-3 m-4 px-5 py-2 font-semibold bg-green-200 rounded-full hover:bg-green-300"
+      >
         <div><ListHeaderIcon /></div>
         <button @click="$router.replace(`/lists/${list.id}`)">
           Task: {{ list.listName }}
         </button>
+      </div>
+      <div class="flex">
         <p>Assigned team: {{ list.teamName }}</p>
         <button @click="deleteList(list.id)" :disabled="isDeleting">
           <DeleteIcon />

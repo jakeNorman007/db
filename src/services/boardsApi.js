@@ -29,10 +29,20 @@ export async function getBoard(id) {
 }
 
 //deals with the creation of a new project board
-export async function createBoard({boardName, description}) {
+export async function createBoard({
+  boardName,
+  description,
+  shortDescription,
+}) {
   const { data, error } = await supabase
     .from("boards")
-    .insert([{ boardName: boardName, description: description }])
+    .insert([
+      {
+        boardName: boardName,
+        description: description,
+        shortDescription: shortDescription,
+      },
+    ])
     .select();
 
   if (error) {

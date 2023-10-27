@@ -17,7 +17,7 @@ const board_id = route.params.boardId;
     @click="modalOpen = true"
     class="font-semibold ml-[3rem] text-lg bg-green-200 px-4 py-3 rounded-full hover:bg-green-300"
   >
-    <div class="flex gap-2"><AddBoardIcon />New list</div>
+    <div class="flex gap-2"><AddBoardIcon />New task</div>
   </button>
   <div
     v-if="modalOpen"

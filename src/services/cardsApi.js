@@ -29,3 +29,14 @@ export async function createCard({cardName, list_id}) {
 
   return data;
 }
+//ability to delete a card
+export async function deleteCard(id) {
+  const { data, error } = await supabase.from("cards").delete().eq("id", id);
+
+  if (error) {
+    console.log(error);
+    throw new Error("Card could not be deleted");
+  }
+
+  return data;
+}
