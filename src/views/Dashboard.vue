@@ -13,9 +13,7 @@ const { isLoading, boards } = useBoards();
 <template>
   <div class="pt-8 px-[8rem]">
     <div class="flex gap-4 justify-between items-center">
-      <p class="text-3xl font-semibold">
-       Your projects ({{ boards?.length }})
-      </p>
+      <p class="text-3xl font-semibold">Your projects ({{ boards?.length }})</p>
       <CreateBoardModal />
     </div>
   </div>
@@ -33,17 +31,20 @@ const { isLoading, boards } = useBoards();
         >
           Project name: {{ board.boardName }}
         </button>
-            <div class="px-6 text-md text-slate-400">
+        <div class="px-6 text-md text-slate-400">
           {{ board.shortDescription }}
-            </div>
+        </div>
         <div class="flex mx-3 mt-[3rem] px-2 justify-between">
-            <div>Project created: {{ format(new Date(board.created_at), "MMM dd, yyyy") }}</div>
-            <div>
-          <button><EditIcon /></button>
-          <button @click="deleteBoard(board.id)" :disabled="isDeleting">
-            <DeleteIcon />
-          </button>
-            </div>
+          <div>
+            Project created:
+            {{ format(new Date(board.created_at), "MMM dd, yyyy") }}
+          </div>
+          <div>
+            <button><EditIcon /></button>
+            <button @click="deleteBoard(board.id)" :disabled="isDeleting">
+              <DeleteIcon />
+            </button>
+          </div>
         </div>
       </div>
     </div>

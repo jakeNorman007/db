@@ -12,9 +12,9 @@ const modalOpen = ref(false);
     @click="modalOpen = true"
     class="font-semibold ml-[1rem] text-lg bg-green-200 px-4 py-3 rounded-full hover:bg-green-300"
   >
-  <div class="flex gap-2 items-center">
-  <DescriptionIcon />Project description
-  </div>
+    <div class="flex gap-2 items-center">
+      <DescriptionIcon />Project description
+    </div>
   </button>
   <div
     v-if="modalOpen"
@@ -29,13 +29,16 @@ const modalOpen = ref(false);
       >
         <p class="px-6 pt-[1rem] font-semibold text-xl">Project description</p>
         <div class="py-[1rem] text-lg mx-6">
-        {{ board.description }}
+          {{ board.description }}
         </div>
-      <div>
-        <button @click="modalOpen = false"
+        <div>
+          <button
+            @click="modalOpen = false"
             class="bg-green-200 hover:bg-green-300 ml-6 w-[27rem] rounded-full mt-2 py-2"
-            >Close</button>
-      </div>
+          >
+            Close
+          </button>
+        </div>
       </div>
     </Teleport>
   </div>

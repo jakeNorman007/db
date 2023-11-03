@@ -50,7 +50,7 @@ const list_id = route.params.listId;
             @click="onClick"
             class="bg-green-200 hover:bg-green-300 ml-6 w-[27rem] rounded-full mt-2 py-2"
           >
-            Create card 
+            Create card
           </button>
         </form>
       </div>

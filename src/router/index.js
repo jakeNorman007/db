@@ -25,7 +25,7 @@ const routes = [
     component: () => import("../views/Board.vue"),
   },
   {
-      path: "/lists/:listId",
+    path: "/lists/:listId",
     name: "lists",
     meta: { layout: AppLayout },
     component: () => import("../views/List.vue"),

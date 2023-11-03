@@ -17,7 +17,7 @@ const { cards } = useCards();
       class="flex flex-col ml-[1rem] font-semibold text-lg w-[50rem] h-[57rem]"
     >
       <div class="text-3xl font-semibold mx-3 my-4">
-          {{ list?.listName }} ({{ cards?.length }})<CreateCardModal />
+        {{ list?.listName }} ({{ cards?.length }})<CreateCardModal />
       </div>
       <div class="overflow-y-scroll scrollbar-hide">
         <div
@@ -25,11 +25,9 @@ const { cards } = useCards();
           :key="index"
           class="p-3 m-3 bg-slate-50 h-[12rem] w-[49rem] rounded-md shadow-md shadow-slate-300 border-t-2 border-slate-200"
         >
+          <div>Task: {{ card.cardName }}</div>
           <div>
-            Task: {{ card.cardName }}
-          </div>
-          <div>
-          Date created: {{ format(new Date(card.created_at), "MMM dd yyyy") }}
+            Date created: {{ format(new Date(card.created_at), "MMM dd yyyy") }}
           </div>
           <button @click="deleteCard(card.id)" :disabled="isDeleting">
             <DeleteIcon />

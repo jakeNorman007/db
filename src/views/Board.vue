@@ -6,7 +6,9 @@ import DeleteIcon from "../icons/DeleteIcon.vue";
 import { useBoard } from "./BoardQueries/useGetBoard";
 import { useLists } from "./ListQueries/useLists";
 import { useDeleteList } from "./ListQueries/useDeleteList";
+import { useUsers } from "../views/userQueries/useUsers";
 
+const { users } = useUsers();
 const { isDeleting, deleteList } = useDeleteList();
 const { lists } = useLists();
 const { isLoading, board } = useBoard();
@@ -36,6 +38,9 @@ const { isLoading, board } = useBoard();
           Task: {{ list.listName }}
         </button>
       </div>
+          <div v-for="(user, index) in users" :key="index">
+            {{ user.userName }}
+          </div>
       <div class="flex">
         <p>Assigned team: {{ list.teamName }}</p>
         <button @click="deleteList(list.id)" :disabled="isDeleting">

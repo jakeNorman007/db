@@ -1,12 +1,11 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <div class="relative max-h-screen">
     <div
       class="flex items-center px-[4rem] h-[5rem] w-full bg-slate-50 border-b border-green-400 absolute z-10 justify-between"
     >
-        <p class="text-3xl font-bold items-center">deskbink \\\</p>
+      <p class="text-3xl font-bold items-center">deskbink \\\</p>
       <div class="flex gap-5">
         <button
           class="flex font-semibold items-center shadow-inner gap-2 bg-green-300 px-3 py-2 rounded-full hover:bg-green-200"
@@ -36,8 +35,9 @@
       </p>
       <button
         class="mt-4 justify-self-start bg-green-300 px-3 py-3 rounded-full text-black font-semibold hover:bg-green-200"
-        @click="$router.push('/dashboard')">
-      Go to demo
+        @click="$router.push('/dashboard')"
+      >
+        Go to demo
       </button>
     </div>
   </div>
