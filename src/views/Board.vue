@@ -39,7 +39,8 @@ const { isLoading, board } = useBoard();
         </button>
       </div>
           <div v-for="(user, index) in users" :key="index">
-            {{ user.userName }}
+              {{ user.userName }}
+              <img src="`https://nahnzghzpxruobqwkkmi.supabase.co/storage/v1/object/public/Photos/` + user.userPhoto"/>
           </div>
       <div class="flex">
         <p>Assigned team: {{ list.teamName }}</p>
